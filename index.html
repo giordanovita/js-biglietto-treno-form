@@ -26,7 +26,6 @@
             height: 70vh;
             width: 40vw;
             display: flex;
-            justify-content: center;
             align-items: center;
             background: lightskyblue;
             text-align: center;
@@ -61,14 +60,19 @@
         var kmNumber =parseInt(prompt('Buongiorno! Inserisca il numero di kilometri che vorrebbe percorrere con il nostro treno. Ogni Km ha il costo di 0.21€.'));
         var kmPrice = 0.21;
         var ageClient = parseInt(prompt('Per poter usufruire dei nostri sconti inserisca la su età.'));
-        var ticketPrice = kmNumber * kmPrice;
+        var ticketCost = kmNumber * kmPrice;
+        var ticketPrice = ticketCost.toFixed(2);
 
         
         if(ageClient < 18){
-           var ticketPriceDiscountJunior = ticketPrice - ((ticketPrice * 20) / 100);
+           var ticketCostDiscountJunior = ticketPrice - ((ticketPrice * 20) / 100);
+           var ticketPriceDiscountJunior = ticketCostDiscountJunior.toFixed(2) ;
+
            document.getElementById('ticket').innerHTML = ("IL PREZZO DEL TUO BIGLIETTO CON SCONTO JUNIOR E'" + ticketPriceDiscountJunior + "€"  );
         } else if (ageClient > 65){
-            var ticketPriceDiscountSenior = ticketPrice - ((ticketPrice * 40) / 100);
+            var ticketCostDiscountSenior = ticketPrice - ((ticketPrice * 40) / 100);
+            var ticketPriceDiscountSenior = ticketCostDiscountSenior.toFixed(2) ;
+
             document.getElementById('ticket').innerHTML = ("IL PREZZO DEL TUO BIGLIETTO CON SCONTO SENIOR E'" + ticketPriceDiscountSenior + "€"  );
         } else {
             document.getElementById('ticket').innerHTML = ("IL PREZZO DEL TUO BIGLIETTO E'" + ticketPrice + "€"  );
