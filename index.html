@@ -61,17 +61,17 @@
         var kmPrice = 0.21;
         var ageClient = parseInt(prompt('Per poter usufruire dei nostri sconti inserisca la su età.'));
         var ticketCost = kmNumber * kmPrice;
-        var ticketPrice = ticketCost.toFixed(2);
+        var ticketPrice = parseInt(ticketCost.toFixed(2));
 
         
         if(ageClient < 18){
            var ticketCostDiscountJunior = ticketPrice - ((ticketPrice * 20) / 100);
-           var ticketPriceDiscountJunior = ticketCostDiscountJunior.toFixed(2) ;
+           var ticketPriceDiscountJunior = parseInt(ticketCostDiscountJunior.toFixed(2)) ;
 
            document.getElementById('ticket').innerHTML = ("IL PREZZO DEL TUO BIGLIETTO CON SCONTO JUNIOR E'" + ticketPriceDiscountJunior + "€"  );
         } else if (ageClient > 65){
             var ticketCostDiscountSenior = ticketPrice - ((ticketPrice * 40) / 100);
-            var ticketPriceDiscountSenior = ticketCostDiscountSenior.toFixed(2) ;
+            var ticketPriceDiscountSenior = parseInt(ticketCostDiscountSenior.toFixed(2)) ;
 
             document.getElementById('ticket').innerHTML = ("IL PREZZO DEL TUO BIGLIETTO CON SCONTO SENIOR E'" + ticketPriceDiscountSenior + "€"  );
         } else {
